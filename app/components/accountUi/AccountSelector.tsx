@@ -38,7 +38,7 @@ function AccountSelector (props) {
                     <option selected>Choose...</option>
                     {
                         accounts.map(account => (
-                                <option value={account.accountId}>{account.accountNumber}</option>
+                                <option key={account.accountId} value={account.accountId}>{account.accountNumber}</option>
                             )
                         )
                     }
