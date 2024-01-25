@@ -6,6 +6,11 @@ function AccountSelector (props) {
 
     const [accounts, setAccounts] = useState([]);
 
+    const handleChange = (event) => {
+        // 👇 Get input value from "event"
+        props.updateAccountId(event.target.value);
+    };
+
     /* Load data from API - Account list from client in parameters */
     const fetchData = async () => {
         let data = await fetch(`/api/clients/${props.clientId}/details`)
@@ -29,7 +34,7 @@ function AccountSelector (props) {
                 <div className="input-group-prepend">
                     <label className="input-group-text" htmlFor="inputAccountSelect">Choix compte : </label>
                 </div>
-                <select className="custom-select" id="inputAccountSelect">
+                <select className="custom-select" id="inputAccountSelect" onChange={handleChange}>
                     <option selected>Choose...</option>
                     {
                         accounts.map(account => (
@@ -42,6 +47,6 @@ function AccountSelector (props) {
         </>
     );
 
-};
+}
 
 export default AccountSelector;
