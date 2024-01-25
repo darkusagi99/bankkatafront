@@ -1,4 +1,6 @@
 import { Inter } from "next/font/google";
+// add bootstrap css
+import 'bootstrap/dist/css/bootstrap.css'
 import "./globals.css";
 import Navbar from "./components/navbar"
 
