@@ -33,7 +33,7 @@ export default function Transactions() {
     return <>
         <Title label="Transactions" />
         <form onSubmit={onSubmit}>
-            <AccountSelector clientId="1" updateAccountId={updateAccountId}/>
+            <AccountSelector clientId={clientId} updateAccountId={updateAccountId}/>
             <NumberPicker label="Valeur à transférer" min="-10000" max="10000" updateTransactionValue={updateTransactionValue}/>
             <CustomButton label="Add transaction"/>
         </form>
