@@ -1,3 +1,7 @@
+import Title from "../components/Title";
+
 export default function Accounts() {
-    return <p>Account Page</p>;
+    return <>
+        <Title label="Accounts" />
+    </>;
 }

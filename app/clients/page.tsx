@@ -1,3 +1,7 @@
+import Title from "../components/Title";
+
 export default function Clients() {
-    return <p>Clients Page</p>;
+    return <>
+        <Title label="Clients" />
+    </>;
 }

@@ -9,6 +9,6 @@ function NumberPicker(props) {
             </div>
         </>
     );
-};
+}
 
 export default NumberPicker;

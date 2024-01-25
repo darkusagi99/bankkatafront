@@ -1,5 +1,27 @@
+"use client"; // Render at client level
 
-const AccountSelector = () => {
+import {useEffect, useState} from "react";
+
+function AccountSelector (props) {
+
+    const [accounts, setAccounts] = useState([]);
+
+    /* Load data from API - Account list from client in parameters */
+    const fetchData = async () => {
+        let data = await fetch(`/api/clients/${props.clientId}/details`)
+            .then((response) => response.json())
+            .then((data) => (data.accountList));
+
+        console.log(data);
+        if (data == undefined) { data = [] }
+        setAccounts(data);
+
+        return data;
+
+    }
+
+    /* Call data to use */
+    useEffect(() => { fetchData(); }, [])
 
     return (
         <>
@@ -9,9 +31,12 @@ const AccountSelector = () => {
                 </div>
                 <select className="custom-select" id="inputAccountSelect">
                     <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    {
+                        accounts.map(account => (
+                                <option value={account.accountId}>{account.accountNumber}</option>
+                            )
+                        )
+                    }
                 </select>
             </div>
         </>

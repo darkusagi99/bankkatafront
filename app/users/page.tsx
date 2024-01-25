@@ -1,3 +1,7 @@
+import Title from "../components/Title";
+
 export default function Users() {
-    return <p>Users Page</p>;
+    return <>
+        <Title label="Users" />
+    </>;
 }
