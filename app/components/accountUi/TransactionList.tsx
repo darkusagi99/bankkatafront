@@ -2,13 +2,13 @@
 
 import {useEffect, useState} from "react";
 
-function TransactionList (props) {
+function TransactionList ({accountId}) {
 
     const [transactions, setTransactions] = useState([]);
 
     /* Load data from API - Account list from client in parameters */
     const fetchData = async () => {
-        let data = await fetch(`/api/transactions/account/${props.accountId}`)
+        let data = await fetch(`/api/transactions/account/${accountId}`)
             .then((response) => response.json())
             .then((data) => (data));
 
@@ -21,7 +21,7 @@ function TransactionList (props) {
     }
 
     /* Call data to use */
-    useEffect(() => { fetchData(); }, [])
+    useEffect(() => { fetchData(); }, [accountId])
 
     return (
         <>

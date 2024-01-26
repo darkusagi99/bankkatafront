@@ -9,7 +9,7 @@ import TransactionList from "../components/accountUi/TransactionList";
 export default function Accounts() {
 
     const [clientId, setClientId] = useState(1);
-    const [accountId, setAccountId] = useState(1);
+    const [accountId, setAccountId] = useState(0);
 
     const updateAccountId = (newValue: SetStateAction<number>) => {
         setAccountId(newValue);

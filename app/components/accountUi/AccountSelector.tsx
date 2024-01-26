@@ -35,7 +35,7 @@ function AccountSelector (props) {
                     <label className="input-group-text" htmlFor="inputAccountSelect">Choix compte : </label>
                 </div>
                 <select className="custom-select" id="inputAccountSelect" onChange={handleChange}>
-                    <option selected>Choose...</option>
+                    <option selected value="0">Choose...</option>
                     {
                         accounts.map(account => (
                                 <option key={account.accountId} value={account.accountId}>{account.accountNumber}</option>
